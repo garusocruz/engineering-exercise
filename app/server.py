@@ -1,9 +1,9 @@
-from flask import Flask
-server = Flask(__name__)
+from flask import current_app
+from main import server
+from controllers.data import bp
 
-@server.route("/")
-def hello():
-    return { "hello": "world!" }
+with server.app_context():
+    current_app.register_blueprint(bp)
 
 if __name__ == "__main__":
-    server.run(host='0.0.0.0')
+    server.run(host="0.0.0.0")
