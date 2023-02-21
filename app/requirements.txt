@@ -1,1 +1,7 @@
 Flask
+Flask-SQLAlchemy
+python-dateutil
+python-decouple
+mysqlclient
+coverage 
+pytest
